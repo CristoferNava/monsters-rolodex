@@ -1,11 +1,19 @@
+import "./card-list.styles.css";
+
 const CardList = ({ users }) => {
-  console.log("Rendering the card list");
   return (
-    <ul>
+    <div className="card-list">
       {users.map((user) => (
-        <h2 key={user.id}>{user.name}</h2>
+        <div key={user.id} className="card-container">
+          <img
+            src={`https://robohash.org/${user.id}?set=2&size=180x180`}
+            alt={`user ${user.name}`}
+          />
+          <h2>{user.name}</h2>
+          <p>{user.email}</p>
+        </div>
       ))}
-    </ul>
+    </div>
   );
 };
 
